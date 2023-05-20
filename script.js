@@ -2,6 +2,7 @@ window.document.oncontextmenu = new Function("return false"); // 우클릭 방�
 window.document.onselectstart = new Function("return false"); // 드래그 방지
 window.document.ondragstart = new Function("return false"); // 이미지 드래그 방지
 
+const kurukuru_audio = new Audio("kurukuru.mp3") // kurukuru 오디오 객체 생성
 
 let clickCount = 0
 let herta // img 요소를 담을 변수 생성
@@ -16,6 +17,7 @@ function kurukuru() {
     herta.setAttribute("src", "kurukuru-kururing.gif") // img 요소의 이미지 설정
     document.body.appendChild(herta); // body에 img 요소 추가
 
+    kurukuru_audio.cloneNode().play() // 겹쳐서 재생이 가능하도록 재생할 때마다 객체를 다시 만들어 재생함
 
     setTimeout(() => {
         // img 요소의 right 스타일 값을 화면 너비로 설정
