@@ -24,4 +24,4 @@ function kurukuru() {
     // CSS 애니메이션 작동이 안 되는 오류 때문에 1ms 지연을 줌
 }
 
-document.body.addEventListener("click", kurukuru) // body 클릭하면 kurukuru 함수 실행
+window.addEventListener("click", kurukuru) // 화면을 클릭하면 kurukuru 함수 실행
