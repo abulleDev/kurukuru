@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(170, 153, 225);
+    overflow: hidden;
+}
+
+h1 {
+    color: white;
+}
+
+.herta {
+    width: 200px;
+    height: 200px;
+    display: inline;
+    position: absolute;
+    right: -200px;
+    transition-property: right;
+    transition-duration: 2s;
+    transition-timing-function: linear;
+}
