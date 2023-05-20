@@ -17,3 +17,7 @@ h1 {
     transition-duration: 2s;
     transition-timing-function: linear;
 }
+
+.text {
+    position: absolute;
+}

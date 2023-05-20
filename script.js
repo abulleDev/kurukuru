@@ -22,6 +22,7 @@ function kurukuru() {
     setTimeout(() => {
         // img 요소의 right 스타일 값을 화면 너비로 설정
         document.getElementById(`herta${clickCount}`).style.right = `${window.innerWidth}px`;
+        document.getElementById(`herta${clickCount}`).style.top = `${(window.innerHeight * Math.random())-170}px`;
     }, 1)
     // CSS 애니메이션 작동이 안 되는 오류 때문에 1ms 지연을 줌
 }
