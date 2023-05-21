@@ -19,12 +19,18 @@ function kurukuru() {
 
     kurukuru_audio.cloneNode().play() // 겹쳐서 재생이 가능하도록 재생할 때마다 객체를 다시 만들어 재생함
 
-    setTimeout(() => {
-        // img 요소의 right 스타일 값을 화면 너비로 설정
-        document.getElementById(`herta${clickCount}`).style.right = `${window.innerWidth}px`;
-        document.getElementById(`herta${clickCount}`).style.top = `${(window.innerHeight * Math.random())-170}px`;
-    }, 1)
-    // CSS 애니메이션 작동이 안 되는 오류 때문에 1ms 지연을 줌
+    function moveHertaImg(currentHertaId) {
+        // CSS 애니메이션 작동이 안 되는 오류 때문에 1ms 지연을 줌
+        setTimeout(() => {
+            // img 요소의 right 스타일 값을 화면 너비로 설정
+            document.getElementById(`herta${currentHertaId}`).style.right = `${window.innerWidth}px`;
+            document.getElementById(`herta${currentHertaId}`).style.top = `${(window.innerHeight * Math.random())-170}px`;
+        }, 1)
+        setTimeout(() => {
+            document.getElementById(`herta${currentHertaId}`).remove()
+        }, 2000)
+    }
+    moveHertaImg(clickCount)
 }
 
 window.addEventListener("click", kurukuru) // 화면을 클릭하면 kurukuru 함수 실행

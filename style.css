@@ -1,10 +1,14 @@
 body {
     background-color: rgb(170, 153, 225);
     overflow: hidden;
-}
-
-h1 {
-    color: white;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url("space\ station\ herta.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .herta {
@@ -20,4 +24,9 @@ h1 {
 
 .text {
     position: absolute;
+}
+
+#clickCount {
+    color: rgb(255, 255, 255);
+    font-size: 40px;
 }
