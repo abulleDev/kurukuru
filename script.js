@@ -9,12 +9,14 @@ function moveHertaImg(currentHertaId) {
         document.getElementById(`herta${currentHertaId}`).style.right = `${window.innerWidth}px`;
         document.getElementById(`herta${currentHertaId}`).style.top = `${(window.innerHeight * Math.random())-170}px`;
     }, 1)
+    // CSS 애니메이션이 종료되는 2초 후에 herta img 요소 삭제
     setTimeout(() => {
         document.getElementById(`herta${currentHertaId}`).remove()
     }, 2000)
 }
 
 const kurukuru_audio = new Audio("kurukuru.mp3") // kurukuru 오디오 객체 생성
+const kururin_audio = new Audio("kururin.mp3") // kururin 오디오 객체 생성
 
 let clickCount = 0
 let herta // img 요소를 담을 변수 생성
@@ -29,7 +31,12 @@ function kurukuru() {
     herta.setAttribute("src", "kurukuru-kururing.gif") // img 요소의 이미지 설정
     document.body.appendChild(herta); // body에 img 요소 추가
 
-    kurukuru_audio.cloneNode().play() // 겹쳐서 재생이 가능하도록 재생할 때마다 객체를 다시 만들어 재생함
+    if (Math.random() * 3 < 2) {
+        kurukuru_audio.cloneNode().play() // 겹쳐서 재생이 가능하도록 재생할 때마다 객체를 다시 만들어 재생함
+    }
+    else {
+        kururin_audio.cloneNode().play()
+    }
 
     moveHertaImg(clickCount)
 }
