@@ -44,8 +44,17 @@ const kururin_audio = new Audio("kururin.mp3") // kururin 오디오 객체 생�
 let clickCount = 0
 let herta // img 요소를 담을 변수 생성
 
+const clickEvent = (function() {
+    if ('ontouchstart' in document.documentElement === true) {
+        return 'touchstart';
+    }
+    else {
+        return 'click';
+    }
+})();
+
 // 화면을 클릭하면 함수 실행
-window.addEventListener("click", () => {
+window.addEventListener(clickEvent, () => {
     clickCount = clickCount + 1
     kurukuru(clickCount)
 })
